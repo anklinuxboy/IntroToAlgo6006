@@ -89,6 +89,7 @@ class DoublyLinkedList(var head: DoublyLinkedListNode? = null, var tail: DoublyL
         }
     }
 
+    // Assumes valid nodes to remove
     fun remove(n1: DoublyLinkedListNode, n2: DoublyLinkedListNode): DoublyLinkedList {
         val l2 = DoublyLinkedList()
         val tmp1 = n1.prev
@@ -110,5 +111,14 @@ class DoublyLinkedList(var head: DoublyLinkedListNode? = null, var tail: DoublyL
 
         tmp?.prev = l.tail
         l.tail?.next = tmp
+    }
+
+    fun iterate() {
+        var tmp = head
+        while (tmp != null) {
+            print("${tmp.item} -> ")
+            tmp = tmp.next
+        }
+        println()
     }
 }
